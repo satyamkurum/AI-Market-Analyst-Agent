@@ -108,8 +108,8 @@ python -m frontend.gradio_ui
     ```  
   
 ### Project Workflow 
-
-USER REQUEST
+---
+""" USER REQUEST
     │
     ▼
 FASTAPI SERVER (HTTP Endpoint)
@@ -147,4 +147,6 @@ RESPONSE FORMATTER
     └── Logging
     │
     ▼
-USER RESPONSE (JSON/text)
+USER RESPONSE (JSON/text) """
+
+---
