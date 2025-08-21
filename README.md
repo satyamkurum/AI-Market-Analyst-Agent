@@ -108,7 +108,8 @@ python -m frontend.gradio_ui
     ```  
   
 ### Project Workflow 
----
+
+```json
 """ USER REQUEST
     │
     ▼
@@ -149,4 +150,4 @@ RESPONSE FORMATTER
     ▼
 USER RESPONSE (JSON/text) """
 
----
+```
