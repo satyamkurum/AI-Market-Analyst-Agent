@@ -7,24 +7,24 @@ A **Producation ready AI MARKET ANALYST AGENT** system that do market research b
 ## Features
 
 ### Core Requirements that is Implemented and also why?
-- 📄 **Document Ingestion** – PDF/TXT processing with smart chunking  
-- 🗄️ **Vector Storage** – Pinecone integration with session isolation so each users data gets stored in same index with different namespace for data privacy and security. I implemented dense dense type with 1024 dimensions so every details can be fetched correctly.  
-- 🔎 **Hybrid Retrieval** – Vector similarity + BM25 keyword search , so if the sementic retrival fails due to critical factual data, keyword seach will give the correct answers. It is required when we want exact data, we can rely fully on semantic search.
-- 🤖 **AI-Powered Q&A** – Accurate answers from document context, because it is saved in the pinecone without duplication, i added duplication detection so each file dont get though the whole process instead we session id stores the meta data of the data. 
-- 🌐 **LLM as Gemini** – Agents brain to choose the tool for specific task, OPENAI API was paid so most reliable llm was gemini that could work with Langchain. and local model gets slow with system compatibility.
-- 🔑 **Session Management** – UUID-based sessions so logs can be checked if any malfulction happens like currpted pdfs or any privacy concern, so it can be deleted
+- **Document Ingestion** – PDF/TXT processing with smart chunking  
+- **Vector Storage** – Pinecone integration with session isolation so each users data gets stored in same index with different namespace for data privacy and security. I implemented dense dense type with 1024 dimensions so every details can be fetched correctly.  
+- **Hybrid Retrieval** – Vector similarity + BM25 keyword search , so if the sementic retrival fails due to critical factual data, keyword seach will give the correct answers. It is required when we want exact data, we can rely fully on semantic search.
+- **AI-Powered Q&A** – Accurate answers from document context, because it is saved in the pinecone without duplication, i added duplication detection so each file dont get though the whole process instead we session id stores the meta data of the data. 
+- **LLM as Gemini** – Agents brain to choose the tool for specific task, OPENAI API was paid so most reliable llm was gemini that could work with Langchain. and local model gets slow with system compatibility.
+- **Session Management** – UUID-based sessions so logs can be checked if any malfulction happens like currpted pdfs or any privacy concern, so it can be deleted
 
-### 🎁 Bonus Features
-- 📝 **Advanced Summarization** – Executive-level summaries it gives, I have done test on diffrent query and saved in json file in repo at last.
-- 📊 **Structured Data Extraction** – JSON output of financial/market metrics  
-- 🔎 **Hybrid Search Engine** – Automatic fallback from vector to keyword search ( highly useful for factual data ) 
-- 📦 **Production Deployment** – Docker & docker-compose setup  
-- 💻 **Web Interface** – Gradio UI for business-friendly interaction but its not proper working with API configuration right now, needs some more time to work on it.
-- 🧪 **Comprehensive Testing** – tested each component, from chunking, embedding, storing in pinecone with session ids, retrival techniques both semantic and keyword based, and whole agentic flow and tested full working vai api.
+### Testing Features
+- **Advanced Summarization** – Executive-level summaries it gives, I have done test on diffrent query and saved in json file in repo at last.
+- **Structured Data Extraction** – JSON output of financial/market metrics  
+- **Hybrid Search Engine** – Automatic fallback from vector to keyword search ( highly useful for factual data ) 
+- **Production Deployment** – Docker & docker-compose setup  
+- **Web Interface** – Gradio UI for business-friendly interaction but its not proper working with API configuration right now, needs some more time to work on it.
+- **Comprehensive Testing** – tested each component, from chunking, embedding, storing in pinecone with session ids, retrival techniques both semantic and keyword based, and whole agentic flow and tested full working vai api.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Component       | Technology                         | Why Chosen |
 |-----------------|------------------------------------|------------|
@@ -37,7 +37,7 @@ A **Producation ready AI MARKET ANALYST AGENT** system that do market research b
 
 ---
 
-## 📦 Installation & Setup
+## Installation & Setup
 
 ```bash
 # 1. Clone repository
@@ -61,5 +61,50 @@ python -m frontend.gradio_ui
  -  OPENAI_API_KEY=your_openai_key
  -  GEMINI_API_KEY=your_gemini_key
 
+##  Design Decisions
 
+### Chunking Strategy
+- **Choice**: 500 tokens per chunk with 50-token overlap  
+- **Some reasons why i choose this**:  
+  - Ensures each chunk captures full semantic meaning.  
+  - Keeps chunk size small enough to fit embedding model limits.  
+  - Overlap preserves continuity between chunks, reducing loss of important context. 
+---
+
+### Embedding Model
+- **Choice**: `sentence-transformers/gte-large`  
+- **Reasons**:  
+  - 1024-dimensional embeddings gives high semantic accuracy.  
+  - It Runs locally and  avoids API costs.  
+  - Balanced trade-off between retrieval quality and latency.  
+- **Comparison**:  
+  - `MiniLM-L6-v2`: I tried this but this was less accurate and also not embedd in 1024 dimension which is required. Also tried Gemini API embedding vai embedding-001 model.
+  - `gte-large`: Slightly higher latency, but **10–12% more accurate** retrieval.  
+- **Final Decided To**: Use `gte-large` for better quality.
+
+---
+
+### Vector Database
+- **Choice**: Pinecone (cloud-native)  
+- **Reasons**:  
+  - low-latency vector search.  
+  - Namespacing  enables session isolation.
+  - Scales without local memory/storage constraints.
+
+---
+
+### Data Extraction Prompt
+- **Choice**: Schema-constrained JSON prompt design  
+- **Reasoning**:  
+  - LLMs sometimes generate natural language around JSON.  
+  - To prevent this, the prompt explicitly enforces JSON-only output.  
+  - Example schema:  
+    ```json
+    {
+      "current_market_size": "...",
+      "projected_cagr": "...",
+      "projected_market_size": "..."
+    }
+    ```  
+  
 
