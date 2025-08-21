@@ -156,6 +156,6 @@ USER RESPONSE (JSON/text)
 - Result of the Testing is saved in `validation_result.json`. Please Check it out.
 
 ##  Closing Notes
-This project is made considering multiple test cases for each component in workflow. I emphasised on **scalability and production** based thinking.
-I design decisions to balance **accuracy, latency, and  most important cost efficiency**, so it ensure practical for enterprise deployment.  
+- This project is made considering multiple test cases for each component in workflow. I emphasised on **scalability and production** based thinking.
+- I design decisions to balance **accuracy, latency, and  most important cost efficiency**, so it ensure practical for enterprise deployment.  
 
