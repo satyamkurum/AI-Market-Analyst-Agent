@@ -55,3 +55,11 @@ docker-compose up --build
 pip install -r requirements.txt
 python -m app.main &
 python -m frontend.gradio_ui
+```
+## Environment Variable
+ -  PINECONE_API_KEY=your_pinecone_key
+ -  OPENAI_API_KEY=your_openai_key
+ -  GEMINI_API_KEY=your_gemini_key
+
+
+
