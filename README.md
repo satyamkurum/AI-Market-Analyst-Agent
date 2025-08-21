@@ -107,4 +107,44 @@ python -m frontend.gradio_ui
     }
     ```  
   
+### Project Workflow 
 
+USER REQUEST
+    │
+    ▼
+FASTAPI SERVER (HTTP Endpoint)
+    ├── Input Validation
+    ├── Authentication
+    │
+    ▼
+SESSION MANAGER
+    ├── Session Validation
+    ├── Auto-create if missing
+    ├── Access Control
+    │
+    ▼
+HYBRID RETRIEVER (Core Engine)
+    ├── VECTOR SEARCH (Pinecone)
+    │   ├── session_{UUID} namespace
+    │   ├── 1024-dim embeddings
+    │   └── cosine similarity
+    │
+    └── BM25 SEARCH (Local)
+        ├── per-session index
+        ├── keyword matching
+        └── fallback mechanism
+    │
+    ▼
+AI TOOLS (LangChain Orchestration)
+    ├── Q&A TOOL ───────┐
+    ├── SUMMARIZER ─────┤ → Gemini LLM → Response
+    └── DATA EXTRACTOR ─┘
+    │
+    ▼
+RESPONSE FORMATTER
+    ├── Standardized JSON
+    ├── Error Handling
+    └── Logging
+    │
+    ▼
+USER RESPONSE (JSON/text)
