@@ -15,7 +15,7 @@ A **Producation ready AI MARKET ANALYST AGENT** system that do market research b
 - **Session Management** – UUID-based sessions so logs can be checked if any malfulction happens like currpted pdfs or any privacy concern, so it can be deleted
 
 ### Testing Features
-- **Advanced Summarization** – Executive-level summaries it gives, I have done test on diffrent query and saved in json file in repo at last.
+- **Advanced Summarization** – Structured good summaries it gives, I have done test on diffrent query and saved in json file in repo at last.
 - **Structured Data Extraction** – JSON output of financial/market metrics  
 - **Hybrid Search Engine** – Automatic fallback from vector to keyword search ( highly useful for factual data ) 
 - **Production Deployment** – Docker & docker-compose setup  
@@ -64,7 +64,7 @@ python -m frontend.gradio_ui
 ##  Design Decisions
 
 ### Chunking Strategy
-- **Choice**: 500 tokens per chunk with 50-token overlap  
+- **Choice**: 500 tokens per chunk with 50 tokens overlap  
 - **Some reasons why i choose this**:  
   - Ensures each chunk captures full semantic meaning.  
   - Keeps chunk size small enough to fit embedding model limits.  
@@ -74,7 +74,7 @@ python -m frontend.gradio_ui
 ### Embedding Model
 - **Choice**: `sentence-transformers/gte-large`  
 - **Reasons**:  
-  - 1024-dimensional embeddings gives high semantic accuracy.  
+  - 1024-dimensional embeddings gives high semantic accuracy
   - It Runs locally and  avoids API costs.  
   - Balanced trade-off between retrieval quality and latency.  
 - **Comparison**:  
@@ -94,7 +94,7 @@ python -m frontend.gradio_ui
 ---
 
 ### Data Extraction Prompt
-- **Choice**: Schema-constrained JSON prompt design  
+- **Choice**: Schema constrained JSON prompt design  to get exact json, no error if data has no data, just write not able to find. and written promts for these to make it more accurate.
 - **Reasoning**:  
   - LLMs sometimes generate natural language around JSON.  
   - To prevent this, the prompt explicitly enforces JSON-only output.  
@@ -152,5 +152,5 @@ USER RESPONSE (JSON/text)
 
 ```
 ### Testing 
-- After Installing and configurations, Run the test_work.py to see the results with Metadata, sessionwise. Alter the query if you want.  
-- Result of the Testing is saved in validation_result.json. Please Check it out.
+- After Installing and configurations, Run the `test_work.py` to see the results with Metadata, sessionwise. Alter the query if you want.  
+- Result of the Testing is saved in `validation_result.json`. Please Check it out.
