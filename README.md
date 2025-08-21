@@ -154,3 +154,8 @@ USER RESPONSE (JSON/text)
 ### Testing 
 - After Installing and configurations, Run the `test_work.py` to see the results with Metadata, sessionwise. Alter the query if you want.  
 - Result of the Testing is saved in `validation_result.json`. Please Check it out.
+
+##  Closing Notes
+This project is made considering multiple test cases for each component in workflow. I emphasised on **scalability and production** based thinking.
+I design decisions to balance **accuracy, latency, and  most important cost efficiency**, so it ensure practical for enterprise deployment.  
+
