@@ -1,0 +1,28 @@
+# requirements.txt
+
+# Core Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+
+# Pinecone (LATEST VERSION)
+pinecone>=1.0.0
+
+# Embeddings & ML
+sentence-transformers>=2.2.2
+rank_bm25>=0.2.1
+
+# Environment & Config
+python-dotenv>=1.0.0
+pydantic-settings>=2.0.3
+
+# Utilities
+diskcache>=5.6.3
+langchain-text-splitters>=0.0.1
+diskcache>=5.6.3
+requests>=2.31.0
+google-generativeai>=0.3.0
+uuid>=1.30
+langchain>=0.1.0
+langchain-google-genai>=0.0.4
+langchain-core>=0.1.0
+pydantic>=2.0.0

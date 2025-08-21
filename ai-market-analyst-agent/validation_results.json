@@ -1,0 +1,106 @@
+{
+  "status": "\u2705 SUCCESS",
+  "success_rate": "100.0%",
+  "passed_tests": 6,
+  "total_tests": 6,
+  "session_id": "dd5ebe98-b545-4ed8-825f-bfa67ba962da",
+  "results": {
+    "Q&A_Specific": "\u2705 PASS",
+    "Q&A_General": "\u2705 PASS",
+    "Summary": "\u2705 PASS",
+    "Data_Extraction": "\u2705 PASS",
+    "Q&A_Numeric": "\u2705 PASS",
+    "Vector_Retrieval": "\u2705 PASS"
+  },
+  "detailed_answers": {
+    "Q&A_Specific": {
+      "query": "What is FutureFlow's market share percentage?",
+      "response": "FutureFlow holds a 15% market share.\n",
+      "response_length": 37,
+      "timestamp": "2025-08-21T17:56:37.670647"
+    },
+    "Q&A_General": {
+      "query": "Who are the main competitors mentioned in the report?",
+      "response": "The main competitors mentioned in the Innovate Inc. Market Research Report are Synergy Systems (18% market share) and FutureFlow (15% market share).  QuantumLeap is also noted as a notable emerging competitor, although with a smaller current market share of 3%.\n",
+      "response_length": 262,
+      "timestamp": "2025-08-21T17:56:41.970459"
+    },
+    "Summary": {
+      "query": "Provide a comprehensive summary",
+      "response": "The global AI workflow automation market is valued at $15 billion, projected to reach $40 billion by 2030 (22% CAGR).  Innovate Inc., with its Automata Pro software, holds a 12% market share, primarily in logistics and supply chain.  Key competitors include Synergy Systems (18%) and FutureFlow (15%), with QuantumLeap emerging as a significant threat despite a smaller market share.  Innovate Inc.'s strengths are its robust architecture and customer loyalty, but weaknesses include slower feature releases and higher pricing.  Opportunities exist in healthcare and finance.  To maintain competitiveness, Innovate Inc. should improve feature velocity, optimize pricing, and expand into new verticals.\n",
+      "response_length": 702,
+      "timestamp": "2025-08-21T17:56:46.837797"
+    },
+    "Data_Extraction": {
+      "query": "Extract all financial metrics and market data",
+      "response": {
+        "current_market_size": "$15 billion",
+        "projected_cagr": "22%",
+        "projected_market_size": "$40 billion",
+        "company_market_share": "12%",
+        "primary_competitors": [
+          "Synergy Systems",
+          "FutureFlow",
+          "QuantumLeap"
+        ],
+        "swot_analysis": {
+          "strengths": [
+            "Robust and scalable architecture of Automata Pro",
+            "strong customer loyalty"
+          ],
+          "weaknesses": [
+            "Slower feature rollout compared to competitors",
+            "higher price point"
+          ],
+          "opportunities": [
+            "Expansion into the healthcare and finance sectors"
+          ],
+          "threats": [
+            "Aggressive pricing from Synergy Systems",
+            "rapid innovation from QuantumLeap"
+          ]
+        }
+      },
+      "response_length": 573,
+      "timestamp": "2025-08-21T17:56:51.908036"
+    },
+    "Q&A_Numeric": {
+      "query": "What is the current market size value?",
+      "response": "The current global market size for AI workflow automation is approximately $15 billion.\n",
+      "response_length": 88,
+      "timestamp": "2025-08-21T17:56:56.052480"
+    },
+    "Vector_Retrieval": {
+      "query": "market share",
+      "results_count": 2,
+      "results": [
+        {
+          "id": "dd5ebe98-b545-4ed8-825f-bfa67ba962da_2_d718d07b512780ac5f778a01761681d7",
+          "score": 0.87811625,
+          "text": "3. Competitive Landscape Innovate Inc. holds a 12% market share. Our primary competitors are \"Synergy Systems\" (18% market share) and \"FutureFlow\" (15% market share). A notable emerging player is \"QuantumLeap,\" which, despite having only a 3% market share, has secured significant venture funding.",
+          "session_id": "dd5ebe98-b545-4ed8-825f-bfa67ba962da",
+          "metadata": {
+            "chunk_index": 2.0,
+            "session_id": "dd5ebe98-b545-4ed8-825f-bfa67ba962da",
+            "text": "3. Competitive Landscape Innovate Inc. holds a 12% market share. Our primary competitors are \"Synergy Systems\" (18% market share) and \"FutureFlow\" (15% market share). A notable emerging player is \"QuantumLeap,\" which, despite having only a 3% market share, has secured significant venture funding."
+          }
+        },
+        {
+          "id": "dd5ebe98-b545-4ed8-825f-bfa67ba962da_4_1d92444aac6f3cf88f7458a8b02fc52a",
+          "score": 0.811626434,
+          "text": "5. Conclusion Innovate Inc. is well-positioned for growth but must address its feature velocity and pricing strategy to maintain its competitive edge. Focusing on expansion into new industry verticals like healthcare is a key strategic priority.",
+          "session_id": "dd5ebe98-b545-4ed8-825f-bfa67ba962da",
+          "metadata": {
+            "chunk_index": 4.0,
+            "session_id": "dd5ebe98-b545-4ed8-825f-bfa67ba962da",
+            "text": "5. Conclusion Innovate Inc. is well-positioned for growth but must address its feature velocity and pricing strategy to maintain its competitive edge. Focusing on expansion into new industry verticals like healthcare is a key strategic priority."
+          }
+        }
+      ],
+      "timestamp": "2025-08-21T17:56:59.451300"
+    }
+  },
+  "timestamp": "2025-08-21T17:56:59.451479",
+  "test_date": "2025-08-21",
+  "system_version": "1.0"
+}
