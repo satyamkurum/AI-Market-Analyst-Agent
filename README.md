@@ -151,3 +151,6 @@ RESPONSE FORMATTER
 USER RESPONSE (JSON/text) 
 
 ```
+### Testing 
+- After Installing and configurations, Run the test_work.py to see the results with Metadata, sessionwise. Alter the query if you want.  
+- Result of the Testing is saved in validation_result.json. Please Check it out.
